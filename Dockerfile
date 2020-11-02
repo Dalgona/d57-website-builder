@@ -1,4 +1,4 @@
-FROM elixir:1.9.4-slim
+FROM elixir:1.10.4-slim
 
 RUN apt-get update && \
     apt-get -y install imagemagick npm sassc
