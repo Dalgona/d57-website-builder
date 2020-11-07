@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PATH=/dart-sass:$PATH
+
 /webhook.escript push &&
 /webhook.escript build_start &&
 
