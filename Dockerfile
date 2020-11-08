@@ -1,15 +1,16 @@
 FROM elixir:1.10.4-slim
 
-RUN apt-get update && \
-    apt-get -y install curl imagemagick && \
+RUN apt-get -y -q update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends ca-certificates curl imagemagick && \
     \
     # Install Node.js, which is required by Firebase CLI.
     (curl -sL https://deb.nodesource.com/setup_15.x | bash -) && \
-    apt-get update && \
-    apt-get -y install nodejs && \
+    apt-get -y -q update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends nodejs && \
     \
     # Install Firebase CLI.
     npm -g install firebase-tools && \
+    npm cache clean --force && \
     apt-get clean && \
     \
     # Install Dart Sass.
