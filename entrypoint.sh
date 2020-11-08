@@ -15,6 +15,6 @@ mix local.rebar --force &&
 (/webhook.escript deploy_start &&
 firebase deploy --only hosting &&
 /webhook.escript deploy_success ||
-(/webhook.escript build_failed; exit 1)) &&
+(/webhook.escript deploy_failed; exit 1)) &&
 
 /webhook.escript all_done
