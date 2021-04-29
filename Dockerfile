@@ -19,7 +19,10 @@ RUN echo 'deb http://deb.debian.org/debian testing main' >> /etc/apt/sources.lis
 
 COPY discord_webhook /discord_webhook
 
-RUN cd /discord_webhook && \
+COPY card_image_fonts /usr/share/fonts/truetype/card_image_fonts
+
+RUN fc-cache -rfv && \
+    cd /discord_webhook && \
     mix local.hex --force && \
     mix local.rebar --force && \
     mix do deps.get, deps.compile, escript.build && \
