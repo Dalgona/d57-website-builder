@@ -5,11 +5,13 @@ and deploy my websites.
 
 ## Included Softwares
 
-- **Elixir v1.10.4** for static website generator (Serum) support
-- **Imagemagick** for thumbnail generation
+- **Elixir v1.11.4** for static website generator (Serum) support
+- **Imagemagick** for generating thumbnails
+- **Cairo and Pango** for generating URL "card" images
 - **Dart Sass** for compiling Sass files into CSS
 - **Node.js** and **Google Firebase CLI** for website deployment
-- And a homebrew Discord webhook client for status reportings
+- **An (oversized) toolchain** for building [cairo\_elixir](https://github.com/Dalgona/cairo_elixir) NIF library
+- And a homebrew Discord webhook client for status reporting
 
 ## Required Environment Variables
 
