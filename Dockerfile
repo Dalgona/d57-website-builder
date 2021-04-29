@@ -3,7 +3,7 @@ FROM elixir:1.11.4-slim
 RUN echo 'deb http://deb.debian.org/debian testing main' >> /etc/apt/sources.list && \
     apt-get -y -q update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends \
-      build-essential ca-certificates curl imagemagick nodejs npm \
+      build-essential ca-certificates curl git imagemagick nodejs npm \
       libcairo2 libcairo2-dev \
       libpango-1.0-0 libpango1.0-dev && \
     \
