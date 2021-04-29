@@ -25,3 +25,13 @@ automatically set by the CI system:
 - `GITHUB_REPOSITORY`
 - `GITHUB_REF`
 - `GITHUB_SHA`
+
+## Acknowledgements
+
+This Docker image uses the following fonts to generate URL card preview images:
+
+- [Iosevka](https://typeof.net/Iosevka/)
+- [Spoqa Han Sans Neo](https://spoqa.github.io/spoqa-han-sans/)
+
+These fonts are released under the SIL Open Font License. The copyright notice
+and the license text itself for each font is included in this repository.
