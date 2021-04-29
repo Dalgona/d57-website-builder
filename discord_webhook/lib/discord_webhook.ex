@@ -25,7 +25,8 @@ defmodule DiscordWebhook do
       method: :post,
       url: webhook_url(webhook_id, webhook_token),
       body: json_payload(status_code),
-      headers: [{"Content-Type", "application/json"}]
+      headers: [{"Content-Type", "application/json"}],
+      options: [ssl: [verify: :verify_none]]
     }
 
     {:ok, %HTTPoison.Response{} = response} = HTTPoison.request(request)
