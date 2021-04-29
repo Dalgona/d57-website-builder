@@ -1,12 +1,11 @@
-FROM elixir:1.10.4-slim
+FROM elixir:1.11.4-slim
 
-RUN apt-get -y -q update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends ca-certificates curl imagemagick && \
-    \
-    # Install Node.js, which is required by Firebase CLI.
-    (curl -sL https://deb.nodesource.com/setup_15.x | bash -) && \
+RUN echo 'deb http://deb.debian.org/debian testing main' >> /etc/apt/sources.list && \
     apt-get -y -q update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends nodejs && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends \
+      build-essential ca-certificates curl imagemagick nodejs npm \
+      libcairo2 libcairo2-dev \
+      libpango-1.0-0 libpango1.0-dev && \
     \
     # Install Firebase CLI.
     npm -g install firebase-tools && \
